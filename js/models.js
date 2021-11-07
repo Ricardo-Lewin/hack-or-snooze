@@ -24,7 +24,7 @@ class Story {
   /** Parses hostname out of URL and returns it. */
 
   getHostName() {
-    return new URL(this.url).host; //Done!
+    return new URL(this.url).host; 
   }
 }
 
@@ -72,7 +72,7 @@ class StoryList {
    * Returns the new Story instance
    */
 
-  async addStory(user, { title, author, url}) {  //Done!
+  async addStory(user, { title, author, url}) {  
     const token = user.loginToken;
     const response = await axios({
       method: "POST",
@@ -98,7 +98,7 @@ class StoryList {
     await axios({
       url: `${BASE_URL}/stories/${storyId}`,
       method: "DELETE",
-      data: { token: user.loginToken }
+      data: { token }
     });
 
     // filter out the story whose ID we are removing
